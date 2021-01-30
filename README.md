@@ -6,6 +6,10 @@ GilRs - Game Input Library for Rust
 [![Documentation](https://docs.rs/gilrs/badge.svg)](https://docs.rs/gilrs/)
 [![Minimum rustc version](https://img.shields.io/badge/rustc-1.40.0+-yellow.svg)](https://gitlab.com/gilrs-project/gilrs)
 
+## Changes made to original
+- Removed yanked WASM
+- You can now use serde_derive ^1.0.120 with gilrs
+
 [**Documentation (master)**](https://gilrs-project.gitlab.io/gilrs/doc/gilrs/)
 
 GilRs abstract platform specific APIs to provide unified interfaces for working with gamepads.
@@ -88,15 +92,6 @@ On most distros it shouldn't be a problem, but if it is, you will have to create
 
 To build GilRs, you will need pkg-config and libudev .pc file. On some
 distributions this file is packaged in separate archive (for example `libudev-dev` in Debian).
-
-Wasm
-----
-
-Wasm implementation uses stdweb, or wasm-bindgen with the wasm-bindgen feature.
-For stdweb, you will need [cargo-web](https://github.com/koute/cargo-web) to build gilrs for
-wasm32-unknown-unknown. For wasm-bindgen, you will need the wasm-bindgen cli or a tool like
-[wasm-pack](https://rustwasm.github.io/wasm-pack/installer/).
-Unlike other platforms, events are only generated when you call `Gilrs::next_event()`.
 
 License
 =======
